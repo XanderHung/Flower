@@ -16,7 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('layouts/app');
 });
-
+Route::get('/addcat', 'AdminController@addcategory');
+Route::post('/addcat', 'AdminController@store')->name('addcategory');
+Route::get('/delcat/{id}', 'AdminController@destroy');
+Route::get('/editcat/{id}','AdminController@edit')->name('editcategory');
+Route::get('/mancat','AdminController@managecat');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
