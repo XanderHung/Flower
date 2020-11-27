@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class ForgotPasswordController extends Controller
 {
@@ -18,5 +19,12 @@ class ForgotPasswordController extends Controller
     |
     */
 
-    use SendsPasswordResetEmails;
+    use ResetsPasswords;
+
+    /**
+     * Where to redirect users after resetting their password.
+     *
+     * @var string
+     */
+    protected $redirectTo = RouteServiceProvider::HOME;
 }
