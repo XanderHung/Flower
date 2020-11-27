@@ -1,4 +1,4 @@
-@extends('viewdef')
+@extends('home')
 
 @section('content')
 <form action="{{route('addcategory')}}" method="POST" enctype="multipart/form-data">
